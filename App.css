@@ -1,0 +1,367 @@
+@import "tailwindcss";
+
+/* NullForums Exact Color Scheme and Styling */
+:root {
+  --nullforums-bg-primary: #0f0f0f;
+  --nullforums-bg-secondary: #1a1a1a;
+  --nullforums-bg-tertiary: #1f1f1f;
+  --nullforums-border: #2a2a2a;
+  --nullforums-border-light: #3f3f46;
+  --nullforums-text-primary: #ffffff;
+  --nullforums-text-secondary: #d1d5db;
+  --nullforums-text-muted: #9ca3af;
+  --nullforums-text-dim: #6b7280;
+  --nullforums-accent-orange: #ff6b35;
+  --nullforums-accent-orange-hover: #ea580c;
+  --nullforums-accent-green: #22c55e;
+  --nullforums-accent-green-hover: #16a34a;
+  --nullforums-accent-blue: #3b82f6;
+  --nullforums-accent-purple: #8b5cf6;
+  --nullforums-accent-pink: #ec4899;
+  --nullforums-accent-red: #dc2626;
+  --nullforums-accent-yellow: #f59e0b;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--nullforums-bg-primary);
+  color: var(--nullforums-text-primary);
+  line-height: 1.6;
+}
+
+/* NullForums Gradient Background */
+.nullforums-gradient {
+  background: linear-gradient(135deg, 
+    var(--nullforums-bg-primary) 0%, 
+    var(--nullforums-bg-secondary) 50%, 
+    var(--nullforums-bg-primary) 100%);
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-track-gray-900 {
+  scrollbar-color: var(--nullforums-border-light) var(--nullforums-bg-tertiary);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nullforums-bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nullforums-border-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nullforums-text-dim);
+}
+
+/* Button Hover Effects */
+.btn-hover-scale {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--nullforums-accent-green), var(--nullforums-accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated Underline */
+.animated-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: var(--nullforums-accent-orange);
+  transition: width 0.3s ease-in-out;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Pulse Animation */
+@keyframes pulse-orange {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+  }
+}
+
+.pulse-orange {
+  animation: pulse-orange 2s infinite;
+}
+
+/* Glow Effect */
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+/* Category Color Classes */
+.category-minecraft {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.category-xenforo2 {
+  background: linear-gradient(135deg, #9333ea, #a855f7);
+}
+
+.category-xenforo1 {
+  background: linear-gradient(135deg, #ea580c, #f97316);
+}
+
+.category-ips {
+  background: linear-gradient(135deg, #374151, #4b5563);
+}
+
+.category-adobe {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.category-wordpress {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.category-whmcs {
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+}
+
+.category-unity {
+  background: linear-gradient(135deg, #db2777, #ec4899);
+}
+
+.category-misc {
+  background: linear-gradient(135deg, #c2410c, #ea580c);
+}
+
+/* Resource Card Styling */
+.resource-card {
+  background: var(--nullforums-bg-primary);
+  border: 1px solid var(--nullforums-border);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.resource-card:hover {
+  border-color: var(--nullforums-accent-orange);
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.1);
+}
+
+/* Navigation Badge Styling */
+.nav-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--nullforums-accent-orange);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star-filled {
+  color: #fbbf24;
+  fill: #fbbf24;
+}
+
+.star-empty {
+  color: var(--nullforums-border-light);
+}
+
+/* Loading Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+  
+  .mobile-full {
+    width: 100%;
+  }
+  
+  .mobile-stack {
+    flex-direction: column;
+  }
+}
+
+/* Focus States */
+input:focus,
+button:focus,
+select:focus {
+  outline: 2px solid var(--nullforums-accent-orange);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--nullforums-accent-orange);
+  color: white;
+}
+
+/* Transitions */
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.transition-colors {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/* Typography */
+.text-gradient {
+  background: linear-gradient(135deg, var(--nullforums-accent-green), var(--nullforums-accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Utility Classes */
+.bg-nullforums-primary {
+  background-color: var(--nullforums-bg-primary);
+}
+
+.bg-nullforums-secondary {
+  background-color: var(--nullforums-bg-secondary);
+}
+
+.bg-nullforums-tertiary {
+  background-color: var(--nullforums-bg-tertiary);
+}
+
+.border-nullforums {
+  border-color: var(--nullforums-border);
+}
+
+.border-nullforums-light {
+  border-color: var(--nullforums-border-light);
+}
+
+.text-nullforums-primary {
+  color: var(--nullforums-text-primary);
+}
+
+.text-nullforums-secondary {
+  color: var(--nullforums-text-secondary);
+}
+
+.text-nullforums-muted {
+  color: var(--nullforums-text-muted);
+}
+
+.text-nullforums-dim {
+  color: var(--nullforums-text-dim);
+}
+
+.text-nullforums-orange {
+  color: var(--nullforums-accent-orange);
+}
+
+.text-nullforums-green {
+  color: var(--nullforums-accent-green);
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --nullforums-border: #ffffff;
+    --nullforums-text-muted: #ffffff;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
